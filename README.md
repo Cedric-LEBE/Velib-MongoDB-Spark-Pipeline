@@ -26,7 +26,7 @@ db.stations.countDocuments()
 ```
 
 ## 4) Lancer Jupyter + Spark 
-Crée un venv/conda puis installe les dépendances :
+Création de l'environnement virtuel et installation des dépendances :
 ```bash
 python3 -m venv .venv
 # Windows: .venv\Scripts\activate
