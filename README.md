@@ -2,7 +2,7 @@
 
 Ce projet met en place une pipeline pour l'ingestion de données en temps réel avec MongoDB et leur traitement avec Spark.
 - **Docker** : MongoDB + ingestion temps réel (toutes les 1–5 minutes)
-- **Local (ta machine)** : Jupyter + **Spark** pour KPI + dataset ML (lecture/écriture via `pymongo`)
+- **Local** : Jupyter + **Spark** pour KPI + dataset ML (lecture/écriture via `pymongo`)
 
 ## 1) Pré-requis
 - Docker Desktop
