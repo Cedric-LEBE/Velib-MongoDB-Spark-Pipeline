@@ -1,0 +1,30 @@
+services:
+  mongo:
+    image: mongo:6
+    container_name: velib-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  velib_ingest:
+    build: .
+    container_name: velib-ingest
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/velib
+      - MONGO_DB=velib
+      - STATIONS_COLLECTION=stations
+      - AVAIL_COLLECTION=availability_raw
+      - VELIB_STATION_INFO_URL=https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/station_information.json
+      - VELIB_STATION_STATUS_URL=https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/station_status.json
+      - INGEST_INTERVAL_SECONDS=180
+      - TTL_DAYS=90
+      - SAMPLE_N=0
+    volumes:
+      - .:/app
+    command: ["python", "-u", "src/velib_ingest.py"]
+
+volumes:
+  mongo_data:

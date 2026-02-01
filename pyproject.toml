@@ -1,0 +1,26 @@
+[project]
+name = "velib-mongo-spark-local"
+version = "0.1.0"
+description = "Vélib realtime ingestion into MongoDB + Spark notebooks (local) for KPI & ML dataset"
+requires-python = ">=3.10"
+dependencies = [
+  "pymongo>=4.6",
+  "requests>=2.31",
+  "pandas>=2.1",
+  "pyarrow>=14",
+  "pyspark==3.5.0",
+  "python-dateutil>=2.9",
+]
+
+[project.optional-dependencies]
+dev = [
+  "jupyterlab>=4.0",
+  "ipykernel>=6.25",
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
