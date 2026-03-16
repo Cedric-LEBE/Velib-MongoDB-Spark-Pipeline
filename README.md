@@ -1,4 +1,4 @@
-# Vélib' MongoDB Realtime + Spark — TP NoSQL/PySpark
+# Vélib' MongoDB Realtime - Spark (PySpark)
 
 Ce projet met en place une pipeline pour l'ingestion de données en temps réel avec MongoDB et leur traitement avec Spark.
 - **Docker** : MongoDB + ingestion temps réel (toutes les 1–5 minutes)
